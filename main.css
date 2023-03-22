@@ -1,10 +1,25 @@
 body {
     margin: 0;
-
-}
-body, canvas {
-background-color: black;
-}
-::-webkit-scrollbar{
-    display: none;
-}
+  }
+  
+  #form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  #word-form {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  #submit-button {
+    margin-left: 10px;
+  }
+  
+  canvas {
+    display: block;
+  }
+  

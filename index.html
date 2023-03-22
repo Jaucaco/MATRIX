@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falling Letters</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="form-container">
+      <form id="word-form">
+        <label for="word-input" style="color: white;">Enter your words:</label>
+        <input type="text" id="word-input" />
+        <button type="submit" id="submit-button">Submit</button>
+      </form>
+    </div>
+
     <canvas></canvas>
-    <label for="letters">Select letters:</label>
-    <select id="letters">
-        <option value="NEO">NEO</option>
-        <option value="ABC">ABC</option>
-        <option value="123">123</option>
-    </select>
+
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
