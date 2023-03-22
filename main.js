@@ -1,6 +1,12 @@
-let canvas = document.querySelector ('canvas');
-let ctx = canvas.getContext ('2d');
-let letters = [ 'N','E','O']
+let canvas = document.querySelector('canvas');
+let ctx = canvas.getContext('2d');
+let letters = ['N','E','O'];
+
+let letterSelect = document.querySelector('#letters');
+letterSelect.addEventListener('change', () => {
+    letters = letterSelect.value.split('');
+});
+
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 let drops = []
@@ -8,9 +14,10 @@ let drops = []
 for (let i = 0; i < canvas.width / 15; i++ ){
     drops.push ({x:i * 15, y: Math.ceil(Math.random()* 60) * 15})
 }
+
 const drop = () => {
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-    ctx.fillRect (0 ,0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     for (let i = 0; i < drops.length; i++) {
         let text = letters[Math.floor(Math.random()* letters.length)];
@@ -24,16 +31,17 @@ const drop = () => {
         ctx.fillText (text, drops [i].x, drops[i].y);
     }
 }
-setInterval(drop, 70)
 
-window.addEventListener ('resize', () => {
+setInterval(drop, 70);
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-drops = []
-for(let i = 0; i <canvas.width/ 15; i++){
-    drops.push({x: i * 15, y: Math.ceil(Math.random()* 60) * -15})
+window.addEventListener('resize', () => {
 
-}
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    drops = []
+    for(let i = 0; i <canvas.width/ 15; i++){
+        drops.push({x: i * 15, y: Math.ceil(Math.random()* 60) * -15})
+
+    }
 
 })
